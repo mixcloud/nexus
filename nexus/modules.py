@@ -104,7 +104,11 @@ class NexusModule(object):
         return self.get_title()
 
     def get_urls(self):
-        from django.conf.urls.defaults import patterns
+        try:
+            from django.conf.urls import patterns
+        except ImportError:
+            # for Django version less then 1.4
+            from django.conf.urls.defaults import patterns
 
         return patterns('')
 

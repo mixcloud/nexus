@@ -2,6 +2,7 @@
 Nexus
 ~~~~~
 """
+default_app_config = 'nexus.apps.NexusConfig'
 
 try:
     VERSION = __import__('pkg_resources') \

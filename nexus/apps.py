@@ -5,6 +5,9 @@ class NexusConfig(AppConfig):
     label = 'nexus'
     
     def ready(self):
+        from django.contrib import admin
+        
         self.module.autodiscover()
-
+        # Remove the default admin panel
+        self.module.site.unregister(admin.site.app_name)
 
